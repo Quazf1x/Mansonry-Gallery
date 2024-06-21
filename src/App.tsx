@@ -5,9 +5,7 @@ const App = () => {
   return (
     <>
       <Header />
-      <main>
-        <MansonryGrid />
-      </main>
+      <main>{/* <MansonryGrid /> */}</main>
     </>
   );
 };
