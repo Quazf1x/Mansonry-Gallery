@@ -15,9 +15,13 @@ const MansonryGrid = () => {
   });
 
   return (
-    <div className="mansonry-wrapper">
-      {isLoading ? <div className="loader" /> : imgElems}
-    </div>
+    <>
+      {isLoading ? (
+        <div className="loader"></div>
+      ) : (
+        <div className="mansonry-wrapper">{imgElems}</div>
+      )}
+    </>
   );
 };
 export default MansonryGrid;
