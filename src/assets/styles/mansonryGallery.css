@@ -1,0 +1,16 @@
+.mansonry-wrapper {
+  columns: 4;
+  gap: 20px;
+}
+
+.mansonry-image {
+  border-radius: 1rem;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: transform 0.25s ease-in-out;
+  width: 100%;
+}
+
+.mansonry-image:hover {
+  transform: scale(1.02);
+}
