@@ -29,7 +29,7 @@ const useFetch = <T>(category: string, params?: any): [boolean, T] => {
       }
     };
     fetchData();
-  }, [fetchURL]);
+  }, [fetchURL, params]);
 
   return [isLoading, data as T];
 };

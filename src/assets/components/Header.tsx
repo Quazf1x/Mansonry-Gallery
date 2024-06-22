@@ -1,8 +1,9 @@
 import data from "../API/catBreedsData.ts";
+import { categoryContext } from "./CategoryProvider.tsx";
 
 import { faCat } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef, useContext } from "react";
 import "jquery";
 import $ from "jquery";
 import select2 from "select2";
@@ -14,8 +15,9 @@ select2();
 import "select2/dist/css/select2.min.css";
 
 const Header = () => {
-  const [category, setCategory] = useState(data[0].id);
+  const { setCategory } = useContext(categoryContext);
   const selectRef = useRef(null);
+
   useEffect(() => {
     if (selectRef.current) {
       const $select = $(selectRef.current).select2({ data: data });
