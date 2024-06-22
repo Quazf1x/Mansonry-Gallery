@@ -1,19 +1,21 @@
+// id в данных объектах равны id соответствующих пород в api
+
 const data = [
   {
-    id: "Bengal",
-    text: "Bengal",
+    id: "beng",
+    text: "Бенгальская",
   },
   {
-    id: "Scottish Fold",
-    text: "Scottish Fold",
+    id: "sfol",
+    text: "Шотландская вислоухая",
   },
   {
-    id: "Sphynx",
-    text: "Sphynx",
+    id: "sphy",
+    text: "Сфинкс",
   },
   {
-    id: "Siamese",
-    text: "Siamese",
+    id: "siam",
+    text: "Сиамская",
   },
 ];
 

@@ -14,17 +14,20 @@ select2();
 import "select2/dist/css/select2.min.css";
 
 const Header = () => {
-  const [category, setCategory] = useState("Bengal");
+  const [category, setCategory] = useState(data[0].id);
   const selectRef = useRef(null);
   useEffect(() => {
     if (selectRef.current) {
       const $select = $(selectRef.current).select2({ data: data });
+
       $select.on("change", (e) => {
-        setCategory(e.target.value);
+        // Преобразование типа, тк если если его обозначить сразу
+        // При объявлении e, TS выдает ошибку
+        const target = e.target as HTMLSelectElement;
+        setCategory(target.value);
       });
     }
   }, []);
-  console.log(category);
 
   return (
     <header className="header-main">
