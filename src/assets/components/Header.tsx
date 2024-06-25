@@ -36,7 +36,10 @@ const Header = () => {
       <h1>
         Cattio <FontAwesomeIcon icon={faCat} />
       </h1>
-      <select className="header-category-select" ref={selectRef}></select>
+      <select className="header-category-select" ref={selectRef}>
+        <option value="beng">Бенгальская</option>
+        <option value="sfol">Скоттиш Фолд</option>
+      </select>
     </header>
   );
 };

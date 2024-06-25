@@ -1,7 +1,7 @@
 .header-main {
   align-items: center;
-  background-color: var(--accent-color);
   color: var(--white);
+  background-color: var(--bg-color);
   display: flex;
   justify-content: space-between;
   padding: 0 5rem;
@@ -12,6 +12,7 @@
 }
 
 .header-main > h1 {
+  color: var(--accent-color);
   cursor: default;
   font-size: 1.5rem;
   text-transform: uppercase;

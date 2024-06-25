@@ -16,6 +16,8 @@ const useFetch = <T>(category: string, params?: any): [boolean, T] => {
 
   useEffect(() => {
     const fetchData = async () => {
+      if (!isLoading) setLoading(true);
+
       try {
         console.log("fetched");
         const response = await fetch(fetchURL, { mode: "cors" });

@@ -1,12 +1,11 @@
 .mansonry-wrapper {
-  columns: 4;
-  gap: 20px;
+  columns: 3;
+  gap: 15px;
 }
 
 .mansonry-image {
-  border-radius: 1rem;
   cursor: pointer;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   transition: transform 0.25s ease-in-out;
   width: 100%;
 }

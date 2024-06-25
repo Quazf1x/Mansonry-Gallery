@@ -3,6 +3,11 @@ import catType from "../API/fetchTypes.ts";
 import useFetch from "../API/useFetch.ts";
 import { categoryContext } from "./CategoryProvider.tsx";
 import { useMemo, useContext } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  mansonryGridVariants,
+  cardVariants,
+} from "../helpers/motionConstants.ts";
 
 const MansonryGrid = () => {
   const { category } = useContext(categoryContext);
@@ -19,7 +24,8 @@ const MansonryGrid = () => {
   if (!isLoading) {
     imgElems = catData.map((img, i) => {
       return (
-        <img
+        <motion.img
+          variants={cardVariants}
           className="mansonry-image"
           key={`mansonry-${img.id}-${i}`}
           src={img.url}
@@ -29,13 +35,22 @@ const MansonryGrid = () => {
   }
 
   return (
-    <>
+    <AnimatePresence mode="wait">
       {isLoading ? (
         <div className="loader"></div>
       ) : (
-        <div className="mansonry-wrapper">{imgElems}</div>
+        <motion.div
+          key={category}
+          variants={mansonryGridVariants}
+          initial="initial"
+          exit="exit"
+          animate="animate"
+          className="mansonry-wrapper"
+        >
+          {imgElems}
+        </motion.div>
       )}
-    </>
+    </AnimatePresence>
   );
 };
 export default MansonryGrid;
