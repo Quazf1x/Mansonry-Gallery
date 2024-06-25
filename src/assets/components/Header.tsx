@@ -7,12 +7,11 @@ import { useEffect, useRef, useContext } from "react";
 import "jquery";
 import $ from "jquery";
 import select2 from "select2";
+import "select2/dist/css/select2.min.css";
 
 // @ts-expect-error: Вызов select2 на внешнем уровне -
 // единственный способ, с помощью которого данный плагин заработал
 select2();
-
-import "select2/dist/css/select2.min.css";
 
 const Header = () => {
   const { setCategory } = useContext(categoryContext);

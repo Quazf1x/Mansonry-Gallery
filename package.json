@@ -15,16 +15,18 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "framer-motion": "^11.2.11",
-    "jquery": "^3.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "select2": "^4.1.0-rc.0"
+    "select2": "^4.1.0-rc.0",
+    "slick-carousel": "^1.8.1",
+    "slick-lightbox": "^0.2.12"
   },
   "devDependencies": {
     "@types/jquery": "^3.5.30",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@types/select2": "^4.0.63",
+    "@types/slick-carousel": "^1.6.40",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
     "@vitejs/plugin-react": "^4.2.1",
