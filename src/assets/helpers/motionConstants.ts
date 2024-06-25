@@ -12,9 +12,4 @@ const mansonryGridVariants = {
   },
 };
 
-const cardVariants = {
-  initial: { opacity: 0.5 },
-  animate: { opacity: 1 },
-};
-
-export { mansonryGridVariants, cardVariants };
+export { mansonryGridVariants };
