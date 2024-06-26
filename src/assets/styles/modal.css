@@ -12,9 +12,18 @@
 }
 
 .modal-wrapper {
-  align-self: center;
-  background-color: aliceblue;
-  top: 50%;
-  height: 400px;
-  width: 400px;
+  width: 600px;
+}
+
+.modal-img {
+  object-fit: cover;
+}
+
+.slick-initialized .slick-track {
+  display: flex;
+  align-items: center;
+}
+
+.slick-slide img {
+  max-height: 700px;
 }

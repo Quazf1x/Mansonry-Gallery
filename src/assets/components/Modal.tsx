@@ -16,14 +16,14 @@ const Modal = ({ catData, selectedModal, setSelectedModal }: modalType) => {
   const carouselRef = useRef(null);
 
   useEffect(() => {
-    if (carouselRef.current) $(carouselRef.current).slick();
-    console.log(carouselRef);
+    console.log(selectedModal);
+    if (carouselRef.current) $(carouselRef.current).slick({});
   }, [selectedModal]);
 
   let images;
   if (catData) {
     images = catData.map((img, i) => {
-      return <img key={`modal-${i}`} src={img.url} />;
+      return <img className="modal-img" key={`modal-${i}`} src={img.url} />;
     });
   }
 
@@ -31,7 +31,11 @@ const Modal = ({ catData, selectedModal, setSelectedModal }: modalType) => {
     <>
       {selectedModal ? (
         <div onClick={() => setSelectedModal(null)} className="modal-bg">
-          <div ref={carouselRef} className="modal-wrapper">
+          <div
+            onClick={(e) => e.stopPropagation()}
+            ref={carouselRef}
+            className="modal-wrapper"
+          >
             {images}
           </div>
         </div>
