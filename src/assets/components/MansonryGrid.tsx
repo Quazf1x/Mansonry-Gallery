@@ -1,16 +1,12 @@
 //import catData from "../../../data.ts";
-import catType from "../API/fetchTypes.ts";
+import { catType, modalType } from "../helpers/types.ts";
 import useFetch from "../API/useFetch.ts";
 import { categoryContext } from "./CategoryProvider.tsx";
 import { useMemo, useContext } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { mansonryGridVariants } from "../helpers/motionConstants.ts";
 
-type mansonryGridType = {
-  setModal: React.Dispatch<React.SetStateAction<React.ReactNode>>;
-};
-
-const MansonryGrid = ({ setModal }: mansonryGridType) => {
+const MansonryGrid = ({ setSelectedModal }: modalType) => {
   const { category } = useContext(categoryContext);
 
   const params = useMemo(() => {
@@ -22,16 +18,17 @@ const MansonryGrid = ({ setModal }: mansonryGridType) => {
 
   const [isLoading, catData] = useFetch<catType[]>("images/search", params);
 
+  const handleImgClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const target = e.target as HTMLImageElement;
+    setSelectedModal(target);
+  };
+
   let imgElems;
   if (!isLoading) {
     imgElems = catData.map((img, i) => {
       return (
-        <a onClick={(e) => setModal(e.target)}>
-          <img
-            className="mansonry-image"
-            key={`mansonry-${img.id}-${i}`}
-            src={img.url}
-          />
+        <a key={`mansonry-${img.id}-${i}`} onClick={handleImgClick}>
+          <img className="mansonry-image" src={img.url} />
         </a>
       );
     });

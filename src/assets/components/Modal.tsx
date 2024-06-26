@@ -1,13 +1,8 @@
-type modalType = {
-  selectedModal: React.ReactNode | null;
-  setSelectedModal:
-    | React.Dispatch<React.SetStateAction<React.ReactNode>>
-    | React.Dispatch<React.SetStateAction<null>>;
-};
+import { modalType } from "../helpers/types";
 
 const Modal = ({ selectedModal, setSelectedModal }: modalType) => {
   if (!selectedModal) return <></>;
-  //console.log(selectedModal.src)
+  console.log(selectedModal.src);
   return (
     <div onClick={() => setSelectedModal(null)} className="modal-bg">
       <div className="modal-wrapper"></div>

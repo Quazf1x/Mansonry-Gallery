@@ -1,9 +1,20 @@
 .modal-bg {
+  align-items: center;
   background-color: #000000c6;
+  display: flex;
+  justify-content: center;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   position: absolute;
   z-index: 3;
+}
+
+.modal-wrapper {
+  align-self: center;
+  background-color: aliceblue;
+  top: 50%;
+  height: 400px;
+  width: 400px;
 }

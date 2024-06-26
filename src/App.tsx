@@ -5,7 +5,9 @@ import Modal from "./assets/components/Modal";
 import { useState } from "react";
 
 const App = () => {
-  const [selectedModal, setSelectedModal] = useState(null);
+  const [selectedModal, setSelectedModal] = useState<null | HTMLImageElement>(
+    null
+  );
 
   return (
     <CategoryProvider>
@@ -14,8 +16,8 @@ const App = () => {
         setSelectedModal={setSelectedModal}
       />
       <Header />
-      <main>
-        <MansonryGrid setModal={setSelectedModal} />
+      <main className={selectedModal ? "hidden-overflow-y" : ""}>
+        <MansonryGrid setSelectedModal={setSelectedModal} />
       </main>
     </CategoryProvider>
   );

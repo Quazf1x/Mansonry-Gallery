@@ -11,12 +11,12 @@ type providerType = {
   children: ReactNode;
 };
 
-type cartContextType = {
+type categoryContextType = {
   category: string;
   setCategory: Dispatch<SetStateAction<string>>;
 };
 
-const categoryContext = createContext<cartContextType>({
+const categoryContext = createContext<categoryContextType>({
   category: "e",
   setCategory: () => {},
 });

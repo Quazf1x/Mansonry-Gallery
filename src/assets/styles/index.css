@@ -29,6 +29,7 @@ body {
 main {
   padding: calc(var(--header-height) + 25px) 40px 25px 40px;
   height: inherit;
+  overflow-y: auto;
 }
 
 .loader {
@@ -47,6 +48,10 @@ main {
   width: 75px;
   height: 75px;
   animation: loading 0.75s ease-in-out infinite;
+}
+
+.hidden-overflow-y {
+  overflow-y: hidden;
 }
 
 @keyframes loading {
