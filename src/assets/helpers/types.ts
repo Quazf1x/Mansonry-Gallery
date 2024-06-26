@@ -1,10 +1,3 @@
-type modalType = {
-  selectedModal?: HTMLImageElement | null;
-  setSelectedModal: React.Dispatch<
-    React.SetStateAction<HTMLImageElement | null>
-  >;
-};
-
 type catType = {
   breeds: object[] | null;
   height: number;
@@ -13,4 +6,4 @@ type catType = {
   width: number;
 };
 
-export type { modalType, catType };
+export type { catType };

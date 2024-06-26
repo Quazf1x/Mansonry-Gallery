@@ -1,9 +1,7 @@
 import data from "../API/catBreedsData.ts";
-import { categoryContext } from "./CategoryProvider.tsx";
-
 import { faCat } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect, useRef, useContext } from "react";
+import { useEffect, useRef } from "react";
 import "jquery";
 import $ from "jquery";
 import select2 from "select2";
@@ -13,8 +11,11 @@ import "select2/dist/css/select2.min.css";
 // единственный способ, с помощью которого данный плагин заработал
 select2();
 
-const Header = () => {
-  const { setCategory } = useContext(categoryContext);
+type headerType = {
+  setCategory: React.Dispatch<React.SetStateAction<string>>;
+};
+
+const Header = ({ setCategory }: headerType) => {
   const selectRef = useRef(null);
 
   useEffect(() => {
@@ -28,7 +29,7 @@ const Header = () => {
         setCategory(target.value);
       });
     }
-  }, []);
+  }, [setCategory]);
 
   return (
     <header className="header-main">

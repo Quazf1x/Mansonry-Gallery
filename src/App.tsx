@@ -1,25 +1,41 @@
 import Header from "./assets/components/Header";
-import CategoryProvider from "./assets/components/CategoryProvider";
 import MansonryGrid from "./assets/components/MansonryGrid";
 import Modal from "./assets/components/Modal";
-import { useState } from "react";
+import { useState, useMemo } from "react";
+import useFetch from "./assets/API/useFetch";
+import { catType } from "./assets/helpers/types";
+import data from "./assets/API/catBreedsData";
 
 const App = () => {
-  const [selectedModal, setSelectedModal] = useState<null | HTMLImageElement>(
-    null
-  );
+  const [selectedModal, setSelectedModal] = useState<any>();
+  const [category, setCategory] = useState(data[0].id);
+
+  const params = useMemo(() => {
+    return {
+      breed_ids: category,
+      limit: 50,
+    };
+  }, [category]);
+
+  const [isLoading, catData] = useFetch<catType[]>("images/search", params);
 
   return (
-    <CategoryProvider>
+    <>
       <Modal
+        catData={catData}
         selectedModal={selectedModal}
         setSelectedModal={setSelectedModal}
       />
-      <Header />
+      <Header setCategory={setCategory} />
       <main className={selectedModal ? "hidden-overflow-y" : ""}>
-        <MansonryGrid setSelectedModal={setSelectedModal} />
+        <MansonryGrid
+          category={category}
+          isLoading={isLoading}
+          catData={catData}
+          setSelectedModal={setSelectedModal}
+        />
       </main>
-    </CategoryProvider>
+    </>
   );
 };
 
