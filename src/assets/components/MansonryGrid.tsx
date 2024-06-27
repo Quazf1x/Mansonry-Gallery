@@ -7,9 +7,7 @@ type masonryGridTypes = {
   category: string;
   isLoading: boolean;
   catData: catType[];
-  setSelectedModal: React.Dispatch<
-    React.SetStateAction<HTMLImageElement | null>
-  >;
+  setSelectedModal: React.Dispatch<React.SetStateAction<number | null>>;
 };
 
 const MansonryGrid = ({
@@ -18,8 +16,9 @@ const MansonryGrid = ({
   catData,
   setSelectedModal,
 }: masonryGridTypes) => {
-  const handleImgClick = (e) => {
-    setSelectedModal(e.target.dataset.index);
+  const handleImgClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const imgIndex = Number((e.target as HTMLElement).dataset.index);
+    setSelectedModal(imgIndex);
   };
 
   let imgElems;

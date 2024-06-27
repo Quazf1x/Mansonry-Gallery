@@ -7,7 +7,7 @@ import { catType } from "./assets/helpers/types";
 import data from "./assets/API/catBreedsData";
 
 const App = () => {
-  const [selectedModal, setSelectedModal] = useState<any>();
+  const [selectedModal, setSelectedModal] = useState<number | null>(null);
   const [category, setCategory] = useState(data[0].id);
 
   const params = useMemo(() => {

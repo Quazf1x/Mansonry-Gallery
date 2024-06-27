@@ -1,4 +1,5 @@
 import { catType } from "../helpers/types";
+import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 import "jquery";
 import $ from "jquery";
@@ -8,8 +9,8 @@ import "slick-carousel/slick/slick-theme.css";
 
 type modalType = {
   catData: catType[];
-  selectedModal?: any;
-  setSelectedModal: any;
+  selectedModal?: number | null;
+  setSelectedModal: React.Dispatch<React.SetStateAction<number | null>>;
 };
 
 const Modal = ({ catData, selectedModal, setSelectedModal }: modalType) => {
@@ -18,7 +19,9 @@ const Modal = ({ catData, selectedModal, setSelectedModal }: modalType) => {
   let images;
   if (catData) {
     images = catData.map((img, i) => {
-      return <img className="modal-img" key={`modal-${i}`} src={img.url} />;
+      return (
+        <motion.img className="modal-img" key={`modal-${i}`} src={img.url} />
+      );
     });
   }
 
@@ -31,7 +34,7 @@ const Modal = ({ catData, selectedModal, setSelectedModal }: modalType) => {
 
   return (
     <>
-      {selectedModal ? (
+      {typeof selectedModal == "number" ? (
         <div onClick={() => setSelectedModal(null)} className="modal-bg">
           <div
             onClick={(e) => e.stopPropagation()}
