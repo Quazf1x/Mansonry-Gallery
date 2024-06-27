@@ -12,7 +12,9 @@
 }
 
 .modal-wrapper {
+  background-color: var(--white);
   width: 600px;
+  padding-bottom: 40px;
 }
 
 .modal-img {

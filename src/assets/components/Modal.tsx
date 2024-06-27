@@ -15,17 +15,19 @@ type modalType = {
 const Modal = ({ catData, selectedModal, setSelectedModal }: modalType) => {
   const carouselRef = useRef(null);
 
-  useEffect(() => {
-    console.log(selectedModal);
-    if (carouselRef.current) $(carouselRef.current).slick({});
-  }, [selectedModal]);
-
   let images;
   if (catData) {
     images = catData.map((img, i) => {
       return <img className="modal-img" key={`modal-${i}`} src={img.url} />;
     });
   }
+
+  useEffect(() => {
+    if (carouselRef.current) {
+      $(carouselRef.current).slick();
+      $(carouselRef.current).slick("slickGoTo", selectedModal, true);
+    }
+  }, [selectedModal]);
 
   return (
     <>
