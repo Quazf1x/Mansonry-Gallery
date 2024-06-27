@@ -4,11 +4,11 @@ import Modal from "./assets/components/Modal";
 import { useState, useMemo } from "react";
 import useFetch from "./assets/API/useFetch";
 import { catType } from "./assets/helpers/types";
-import data from "./assets/API/catBreedsData";
+import data from "./assets/API/catBreedsData.ts";
 
 const App = () => {
   const [selectedModal, setSelectedModal] = useState<number | null>(null);
-  const [category, setCategory] = useState(data[0].id);
+  const [category, setCategory] = useState(data[0].children[0].id);
 
   const params = useMemo(() => {
     return {

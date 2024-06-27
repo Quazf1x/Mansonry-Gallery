@@ -18,6 +18,29 @@
   text-transform: uppercase;
 }
 
+.header-main > div {
+  align-items: center;
+  display: flex;
+
+  width: clamp(33%, 20rem, 70%);
+}
+
+.header-category-label {
+  color: var(--accent-color);
+  font-weight: 500;
+  font-size: 1.1rem;
+  margin-right: 1rem;
+}
+
 .header-category-select {
-  width: 10rem;
+  width: 100%;
+}
+
+.select2-selection__choice__display {
+  color: black;
+}
+
+.select2-results__option--disabled {
+  color: black;
+  font-weight: 700;
 }
