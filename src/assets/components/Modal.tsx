@@ -16,13 +16,34 @@ type modalType = {
 const Modal = ({ catData, selectedModal, setSelectedModal }: modalType) => {
   const carouselRef = useRef(null);
 
-  let images;
+  let images,
+    breedData = {
+      name: "",
+      origin: "",
+      weight: "",
+      lifeSpan: "",
+      temperament: "",
+      wiki: "",
+      desc: "",
+    };
+
   if (catData) {
     images = catData.map((img, i) => {
       return (
-        <motion.img className="modal-img" key={`modal-${i}`} src={img.url} />
+        <motion.img className="carousel-img" key={`modal-${i}`} src={img.url} />
       );
     });
+    if (typeof selectedModal == "number") {
+      breedData = {
+        name: catData[selectedModal].breeds[0].name,
+        origin: catData[selectedModal].breeds[0].origin,
+        weight: catData[selectedModal].breeds[0].weight.metric,
+        lifeSpan: catData[selectedModal].breeds[0].life_span,
+        temperament: catData[selectedModal].breeds[0].temperament,
+        wiki: catData[selectedModal].breeds[0].wikipedia_url,
+        desc: catData[selectedModal].breeds[0].description,
+      };
+    }
   }
 
   useEffect(() => {
@@ -36,12 +57,39 @@ const Modal = ({ catData, selectedModal, setSelectedModal }: modalType) => {
     <>
       {typeof selectedModal == "number" ? (
         <div onClick={() => setSelectedModal(null)} className="modal-bg">
-          <div
-            onClick={(e) => e.stopPropagation()}
-            ref={carouselRef}
-            className="modal-wrapper"
-          >
-            {images}
+          <div onClick={(e) => e.stopPropagation()} className="modal-wrapper">
+            <div className="modal-right-wrapper">
+              <h2>{breedData.name}</h2>
+              <p>
+                <strong>Origin: </strong>
+                {breedData.origin}
+              </p>
+              <p>
+                <strong>Life Span: </strong>
+                {breedData.lifeSpan} years
+              </p>
+              <p>
+                <strong>Weight: </strong>
+                {breedData.weight} kg
+              </p>
+              <p>
+                <strong>Temperament: </strong>
+                {breedData.temperament}
+              </p>
+              <p>
+                <strong>Wiki: </strong>
+                <a target="_blank" href={breedData.wiki}>
+                  {breedData.wiki}
+                </a>
+              </p>
+              <p className="modal-description">
+                <strong>Description: </strong>
+                {breedData.desc}
+              </p>
+            </div>
+            <div ref={carouselRef} className="carousel-wrapper">
+              {images}
+            </div>
           </div>
         </div>
       ) : (

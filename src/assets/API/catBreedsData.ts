@@ -1,75 +1,53 @@
 // id в данных объектах равны id соответствующих пород в api
-/*
-const data = [
-  { id: "category-breed", text: "Порода", disabled: true },
-  {
-    id: "beng",
-    text: "Бенгальская",
-    selected: true,
-  },
-  {
-    id: "sfol",
-    text: "Шотландская вислоухая",
-  },
-  {
-    id: "sphy",
-    text: "Сфинкс",
-  },
-  {
-    id: "siam",
-    text: "Сиамская",
-  },
-];
- */
 
 const data = [
   {
-    text: "Порода",
+    text: "Breed",
     children: [
       {
         id: "beng",
-        text: "Бенгальская",
+        text: "Bengal",
         selected: true,
       },
       {
         id: "sfol",
-        text: "Шотландская вислоухая",
+        text: "Scottish Fold",
       },
       {
         id: "sphy",
-        text: "Сфинкс",
+        text: "Sphynx",
       },
       {
         id: "siam",
-        text: "Сиамская",
+        text: "Siamese",
       },
       {
         id: "sibe",
-        text: "Сибирская",
+        text: "Siberian",
       },
       {
         id: "sing",
-        text: "Сингапурская",
+        text: "Singapura",
       },
       {
         id: "snow",
-        text: "Сноу-Шу",
+        text: "Snowshoe",
       },
       {
         id: "soma",
-        text: "Сомали",
+        text: "Somali",
       },
       {
         id: "rblu",
-        text: "Русская Голубая",
+        text: "Russian Blue",
       },
       {
         id: "mcoo",
-        text: "Мейн Кун",
+        text: "Maine Coon",
       },
       {
         id: "abys",
-        text: "Абиссинская",
+        text: "Abyssinian",
       },
     ],
     element: HTMLOptionElement,

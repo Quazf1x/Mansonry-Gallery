@@ -1,4 +1,3 @@
-//import catData from "../../../data.ts";
 import { catType } from "../helpers/types.ts";
 import { motion, AnimatePresence } from "framer-motion";
 import { mansonryGridVariants } from "../helpers/motionConstants.ts";

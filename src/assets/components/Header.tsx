@@ -40,7 +40,7 @@ const Header = ({ setCategory }: headerType) => {
       </h1>
       <div>
         <label className="header-category-label" htmlFor="category-select">
-          Порода:
+          Breed:
         </label>
         <select
           className="header-category-select "
