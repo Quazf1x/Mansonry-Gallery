@@ -1,4 +1,5 @@
 import { catType } from "../helpers/types";
+import { modalVariants } from "../helpers/motionConstants";
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 import "jquery";
@@ -29,9 +30,7 @@ const Modal = ({ catData, selectedModal, setSelectedModal }: modalType) => {
 
   if (catData) {
     images = catData.map((img, i) => {
-      return (
-        <motion.img className="carousel-img" key={`modal-${i}`} src={img.url} />
-      );
+      return <img className="carousel-img" key={`modal-${i}`} src={img.url} />;
     });
     if (typeof selectedModal == "number") {
       breedData = {
@@ -57,7 +56,13 @@ const Modal = ({ catData, selectedModal, setSelectedModal }: modalType) => {
     <>
       {typeof selectedModal == "number" ? (
         <div onClick={() => setSelectedModal(null)} className="modal-bg">
-          <div onClick={(e) => e.stopPropagation()} className="modal-wrapper">
+          <motion.div
+            variants={modalVariants}
+            initial="initial"
+            animate="animate"
+            onClick={(e) => e.stopPropagation()}
+            className="modal-wrapper"
+          >
             <div className="modal-right-wrapper">
               <h2>{breedData.name}</h2>
               <p>
@@ -90,7 +95,7 @@ const Modal = ({ catData, selectedModal, setSelectedModal }: modalType) => {
             <div ref={carouselRef} className="carousel-wrapper">
               {images}
             </div>
-          </div>
+          </motion.div>
         </div>
       ) : (
         <></>
