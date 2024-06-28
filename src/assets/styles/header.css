@@ -22,7 +22,7 @@
   align-items: center;
   display: flex;
 
-  width: clamp(33%, 20rem, 70%);
+  width: clamp(25%, 14rem, 70%);
 }
 
 .header-category-label {
@@ -43,4 +43,16 @@
 .select2-results__option--disabled {
   color: black;
   font-weight: 700;
+}
+
+@media only screen and (max-width: 550px) {
+  .header-main {
+    padding: 0 1rem;
+    width: 100%;
+    z-index: 2;
+  }
+  .header-main > h1 {
+    font-size: 1.5rem;
+    min-width: 8rem;
+  }
 }

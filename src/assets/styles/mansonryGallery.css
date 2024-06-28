@@ -1,5 +1,5 @@
 .mansonry-wrapper {
-  columns: 3;
+  columns: 4;
   gap: 15px;
 }
 
@@ -12,4 +12,26 @@
 
 .mansonry-image:hover {
   transform: scale(1.02);
+}
+
+@media only screen and (max-width: 1050px) {
+  .mansonry-wrapper {
+    columns: 3;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .mansonry-wrapper {
+    columns: 2;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .mansonry-wrapper {
+    columns: 1;
+    gap: 0;
+  }
+  .mansonry-image {
+    margin-bottom: 5px;
+  }
 }

@@ -47,7 +47,10 @@ const Modal = ({ catData, selectedModal, setSelectedModal }: modalType) => {
 
   useEffect(() => {
     if (carouselRef.current) {
-      $(carouselRef.current).slick();
+      $(carouselRef.current).slick({
+        nextArrow: `<button class="modal-next-btn">></button>`,
+        prevArrow: '<button class="modal-prev-btn"><</button>',
+      });
       $(carouselRef.current).slick("slickGoTo", selectedModal, true);
     }
   }, [selectedModal]);
