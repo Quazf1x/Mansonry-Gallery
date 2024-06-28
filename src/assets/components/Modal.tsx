@@ -55,10 +55,14 @@ const Modal = ({ catData, selectedModal, setSelectedModal }: modalType) => {
     }
   }, [selectedModal]);
 
+  const closeModal = () => {
+    setSelectedModal(null);
+  };
+
   return (
     <>
       {typeof selectedModal == "number" ? (
-        <div onClick={() => setSelectedModal(null)} className="modal-bg">
+        <div onClick={closeModal} className="modal-bg">
           <motion.div
             variants={modalVariants}
             initial="initial"
@@ -67,6 +71,9 @@ const Modal = ({ catData, selectedModal, setSelectedModal }: modalType) => {
             className="modal-wrapper"
           >
             <div className="modal-right-wrapper">
+              <button onClick={closeModal} className="modal-close-btn">
+                x
+              </button>
               <h2>{breedData.name}</h2>
               <p>
                 <strong>Origin: </strong>
