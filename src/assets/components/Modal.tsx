@@ -70,6 +70,9 @@ const Modal = ({ catData, selectedModal, setSelectedModal }: modalType) => {
             onClick={(e) => e.stopPropagation()}
             className="modal-wrapper"
           >
+            <div ref={carouselRef} className="carousel-wrapper">
+              {images}
+            </div>
             <div className="modal-right-wrapper">
               <button onClick={closeModal} className="modal-close-btn">
                 x
@@ -101,9 +104,6 @@ const Modal = ({ catData, selectedModal, setSelectedModal }: modalType) => {
                 <strong>Description: </strong>
                 {breedData.desc}
               </p>
-            </div>
-            <div ref={carouselRef} className="carousel-wrapper">
-              {images}
             </div>
           </motion.div>
         </div>
