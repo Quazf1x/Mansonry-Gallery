@@ -49,6 +49,38 @@ const data = [
         id: "abys",
         text: "Abyssinian",
       },
+      {
+        id: "emau",
+        text: "Egyptian Mau",
+      },
+      {
+        id: "sava",
+        text: "Savannah",
+      },
+      {
+        id: "bsho",
+        text: "British Shorthair",
+      },
+      {
+        id: "pers",
+        text: "Persian",
+      },
+      {
+        id: "ragd",
+        text: "Ragdoll",
+      },
+      {
+        id: "esho",
+        text: "Exotic Shorthair",
+      },
+      {
+        id: "norw",
+        text: "Norwegian Forest Cat",
+      },
+      {
+        id: "orie",
+        text: "Oriental",
+      },
     ],
     element: HTMLOptionElement,
   },
