@@ -1,5 +1,5 @@
-import { catType } from "../helpers/types.ts";
 import { motion, AnimatePresence } from "framer-motion";
+import { catType } from "../helpers/types.ts";
 import { mansonryGridVariants } from "../helpers/motionConstants.ts";
 
 type masonryGridTypes = {

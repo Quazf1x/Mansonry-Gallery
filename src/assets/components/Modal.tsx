@@ -1,5 +1,5 @@
-import { catType } from "../helpers/types";
-import { modalVariants } from "../helpers/motionConstants";
+import { catType } from "../helpers/types.ts";
+import { modalVariants } from "../helpers/motionConstants.ts";
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 import "jquery";

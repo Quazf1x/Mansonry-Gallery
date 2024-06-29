@@ -1,9 +1,9 @@
-import Header from "./assets/components/Header";
-import MansonryGrid from "./assets/components/MansonryGrid";
-import Modal from "./assets/components/Modal";
+import Header from "./assets/components/Header.tsx";
+import MansonryGrid from "./assets/components/MansonryGrid.tsx";
+import Modal from "./assets/components/Modal.tsx";
 import { useState, useMemo } from "react";
-import useFetch from "./assets/API/useFetch";
-import { catType } from "./assets/helpers/types";
+import useFetch from "./assets/API/useFetch.ts";
+import { catType } from "./assets/helpers/types.ts";
 import data from "./assets/API/catBreedsData.ts";
 
 const App = () => {
