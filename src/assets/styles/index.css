@@ -30,6 +30,7 @@ main {
   padding: calc(var(--header-height) + 25px) 40px 25px 40px;
   height: inherit;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .loader {
