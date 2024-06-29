@@ -128,3 +128,9 @@
     padding: 1.5rem;
   }
 }
+
+@media only screen and (max-height: 550px) {
+  .slick-initialized .slick-track {
+    align-items: start;
+  }
+}
