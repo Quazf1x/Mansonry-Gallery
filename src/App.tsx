@@ -13,7 +13,7 @@ const App = () => {
   const params = useMemo(() => {
     return {
       breed_ids: category,
-      limit: 50,
+      limit: 20,
     };
   }, [category]);
 
