@@ -33,24 +33,6 @@ main {
   overflow-x: hidden;
 }
 
-.loader {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-}
-
-.loader::after {
-  content: "";
-  border: 10px solid var(--darker-bg-color);
-  border-top-color: var(--accent-color);
-  border-radius: 50%;
-  width: 75px;
-  height: 75px;
-  animation: loading 0.75s ease-in-out infinite;
-}
-
 .hidden-overflow-y {
   overflow-y: hidden;
 }

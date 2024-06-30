@@ -4,8 +4,9 @@ const API_KEY =
 
 import { useState, useEffect } from "react";
 
-const useFetch = <T>(category: string, params?: any): [boolean, T] => {
+const useFetch = <T>(category: string, params?: any): [boolean, T, boolean] => {
   const [isLoading, setLoading] = useState(true);
+  const [isError, setError] = useState(false);
   const [data, setData] = useState<T>();
 
   const fetchParams = new URLSearchParams(params).toString();
@@ -13,7 +14,10 @@ const useFetch = <T>(category: string, params?: any): [boolean, T] => {
 
   useEffect(() => {
     const fetchData = async () => {
-      if (!isLoading) setLoading(true);
+      if (!isLoading) {
+        setLoading(true);
+        setError(false);
+      }
 
       try {
         const response = await fetch(fetchURL, { mode: "cors" });
@@ -23,6 +27,7 @@ const useFetch = <T>(category: string, params?: any): [boolean, T] => {
         setData(data);
       } catch (err) {
         console.error(err);
+        setError(true);
       } finally {
         setLoading(false);
       }
@@ -30,7 +35,7 @@ const useFetch = <T>(category: string, params?: any): [boolean, T] => {
     fetchData();
   }, [fetchURL, params]);
 
-  return [isLoading, data as T];
+  return [isLoading, data as T, isError];
 };
 
 export default useFetch;

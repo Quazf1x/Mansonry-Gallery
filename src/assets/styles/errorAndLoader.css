@@ -1,0 +1,37 @@
+.loader {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.loader::after {
+  content: "";
+  border: 10px solid var(--darker-bg-color);
+  border-top-color: var(--accent-color);
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  animation: loading 0.75s ease-in-out infinite;
+}
+
+.error-wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.error-wrapper > h1 {
+  color: var(--accent-color);
+  font-size: 3rem;
+  text-align: center;
+}
+
+.error-wrapper > p {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}

@@ -1,10 +1,16 @@
 import Header from "./assets/components/Header.tsx";
 import MansonryGrid from "./assets/components/MansonryGrid.tsx";
 import Modal from "./assets/components/Modal.tsx";
-import { useState, useMemo } from "react";
+import ErrorElement from "./assets/components/helperElements/ErrorElement.tsx";
+import LoaderElement from "./assets/components/helperElements/LoaderElement.tsx";
+
 import useFetch from "./assets/API/useFetch.ts";
 import { catType } from "./assets/helpers/types.ts";
 import data from "./assets/API/catBreedsData.ts";
+import { mansonryGridVariants } from "./assets/helpers/motionConstants.ts";
+
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useMemo } from "react";
 
 const App = () => {
   const [selectedModal, setSelectedModal] = useState<number | null>(null);
@@ -17,7 +23,10 @@ const App = () => {
     };
   }, [category]);
 
-  const [isLoading, catData] = useFetch<catType[]>("images/search", params);
+  const [isLoading, catData, isError] = useFetch<catType[]>(
+    "images/search",
+    params
+  );
 
   return (
     <>
@@ -28,12 +37,26 @@ const App = () => {
       />
       <Header setCategory={setCategory} />
       <main className={selectedModal ? "hidden-overflow-y" : ""}>
-        <MansonryGrid
-          category={category}
-          isLoading={isLoading}
-          catData={catData}
-          setSelectedModal={setSelectedModal}
-        />
+        <AnimatePresence mode="wait">
+          {isLoading ? (
+            <LoaderElement />
+          ) : isError ? (
+            <ErrorElement />
+          ) : (
+            <motion.div
+              key={category}
+              variants={mansonryGridVariants}
+              initial="initial"
+              exit="exit"
+              animate="animate"
+            >
+              <MansonryGrid
+                catData={catData}
+                setSelectedModal={setSelectedModal}
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </main>
     </>
   );
