@@ -21,6 +21,7 @@
   overflow-y: auto;
   max-width: 69rem;
   margin: 5rem auto;
+  position: relative;
 }
 
 .modal-right-wrapper {
@@ -81,6 +82,7 @@
   top: 20px;
   height: 25px;
   width: 25px;
+  z-index: 3;
 }
 
 .modal-next-btn,
@@ -126,6 +128,14 @@
 
   .modal-right-wrapper {
     padding: 1.5rem;
+  }
+
+  .modal-close-btn {
+    font-size: 1.3rem;
+    right: 20px;
+    top: 20px;
+    height: 30px;
+    width: 30px;
   }
 }
 

@@ -29,16 +29,15 @@ const Modal = ({ catData, selectedModal, setSelectedModal }: modalType) => {
     };
 
   if (catData) {
-    images = catData.map((img, i) => {
-      return (
-        <img
-          alt={`Picture ${i} of ${img.breeds[0].name} breed, inside modal window`}
-          className="carousel-img"
-          key={`modal-${i}`}
-          src={img.url}
-        />
-      );
-    });
+    images = catData.map((img, i) => (
+      <img
+        alt={`Picture ${i} of ${img.breeds[0].name} breed, inside modal window`}
+        className="carousel-img"
+        key={`modal-${i}`}
+        src={img.url}
+      />
+    ));
+
     if (typeof selectedModal == "number") {
       breedData = {
         name: catData[selectedModal].breeds[0].name,
@@ -77,13 +76,13 @@ const Modal = ({ catData, selectedModal, setSelectedModal }: modalType) => {
             onClick={(e) => e.stopPropagation()}
             className="modal-wrapper"
           >
+            <button onClick={closeModal} className="modal-close-btn">
+              x
+            </button>
             <div ref={carouselRef} className="carousel-wrapper">
               {images}
             </div>
             <div className="modal-right-wrapper">
-              <button onClick={closeModal} className="modal-close-btn">
-                x
-              </button>
               <h2>{breedData.name}</h2>
               <p>
                 <strong>Origin: </strong>
