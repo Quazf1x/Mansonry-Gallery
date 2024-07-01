@@ -30,7 +30,14 @@ const Modal = ({ catData, selectedModal, setSelectedModal }: modalType) => {
 
   if (catData) {
     images = catData.map((img, i) => {
-      return <img className="carousel-img" key={`modal-${i}`} src={img.url} />;
+      return (
+        <img
+          alt={`Picture ${i} of ${img.breeds[0].name} breed, inside modal window`}
+          className="carousel-img"
+          key={`modal-${i}`}
+          src={img.url}
+        />
+      );
     });
     if (typeof selectedModal == "number") {
       breedData = {

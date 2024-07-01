@@ -11,15 +11,20 @@ const MansonryGrid = ({ catData, setSelectedModal }: masonryGridTypes) => {
     setSelectedModal(imgIndex);
   };
 
-  const imgElems = catData.map((img, i) => {
-    return (
-      <a key={`mansonry-${img.id}-${i}`} onClick={handleImgClick}>
-        <img data-index={i} className="mansonry-image" src={img.url} />
-      </a>
-    );
-  });
-
-  return <div className="mansonry-wrapper">{imgElems}</div>;
+  return (
+    <div className="mansonry-wrapper">
+      {catData.map((img, i) => (
+        <a key={`mansonry-${img.id}-${i}`} onClick={handleImgClick}>
+          <img
+            alt={`Picture ${i} of ${img.breeds[0].name} breed`}
+            data-index={i}
+            className="mansonry-image"
+            src={img.url}
+          />
+        </a>
+      ))}
+    </div>
+  );
 };
 
 export default MansonryGrid;
