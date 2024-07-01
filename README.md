@@ -23,6 +23,5 @@
 Мобильная версия:
 
 <img width = 30% height=30% alt="Мобильная версия - Главная страница" src="https://github.com/Quazf1x/Mansonry-Gallery/assets/103037316/5e6b7c91-7632-4b40-9742-14ab39db65f3">
-<img width = 30% height=30% alt="Мобильная версия - Модальное окно1" src="https://github.com/Quazf1x/Mansonry-Gallery/assets/103037316/fa6cbb28-0189-4fc5-8fb8-fe30511c9612">
-<img width = 30% height=30% alt="Мобильная версия - Модальное окно2" src="https://github.com/Quazf1x/Mansonry-Gallery/assets/103037316/83a76b4f-64fb-4a23-8f72-5acb36d6db9a">
-
+<img width = 30% height=30% alt="Мобильная версия - Модальное окно1" src="https://github.com/Quazf1x/Mansonry-Gallery/assets/103037316/43efaceb-5e76-42dd-9ec6-c4b3b5788e60">
+<img width = 30% height=30% alt="Мобильная версия - Модальное окно2" src="https://github.com/Quazf1x/Mansonry-Gallery/assets/103037316/30542ef3-a4e8-4f62-8035-270ca2cd2df2">
