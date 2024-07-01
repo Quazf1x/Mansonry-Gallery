@@ -19,6 +19,7 @@
 body {
   background-color: var(--bg-color);
   height: 100svh;
+  overflow-x: hidden;
 }
 
 #root {
@@ -29,12 +30,6 @@ body {
 main {
   padding: calc(var(--header-height) + 25px) 40px 25px 40px;
   height: inherit;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-
-.hidden-overflow-y {
-  overflow-y: hidden;
 }
 
 @keyframes loading {

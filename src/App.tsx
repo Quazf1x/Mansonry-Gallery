@@ -36,7 +36,7 @@ const App = () => {
         setSelectedModal={setSelectedModal}
       />
       <Header setCategory={setCategory} />
-      <main className={selectedModal ? "hidden-overflow-y" : ""}>
+      <main>
         <AnimatePresence mode="wait">
           {isLoading ? (
             <LoaderElement />
